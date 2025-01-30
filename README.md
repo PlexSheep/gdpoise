@@ -1,11 +1,24 @@
 # gdpoise
 
-Have you ever wanted to modify the header of an ELF binary to make prohibit gdb from debugging it while still keeping the binary functional? No??
-Well now you can.. introducing: **gdpoise**
+## Tired of GDB Debugging Your ELF Binaries? Meet **gdpoise**! 🛡️
 
-This small tool modifies the Header of a given file by overwriting the section number, section offset and strings defined in the header table.
-This results in gdb not being able to debug the modified binary. 
+Ever wanted to modify an ELF binary’s header to prevent GDB from debugging it, while still keeping the binary functional? No? Well, now you can! Introducing **gdpoise** — a simple tool to help you do exactly that.
 
-There are other debuggers out there that have automated scripts to restore the binary, so this may not work in every case.
+### What does **gdpoise** do?
 
-I am not liable for what you do with this tool and I don't guarantee that it works flawlessly without bugs.
+**gdpoise** modifies the ELF binary's header by overwriting key fields:  
+- Section number  
+- Section offset  
+- String entries in the header table  
+
+This effectively prevents GDB from debugging the binary by making it "unrecognizable" to the debugger, while maintaining the functionality of the binary itself. 
+
+### A word of caution
+
+While this tool is effective against GDB, it's worth noting that other debuggers might use automated scripts to restore the binary, so this technique won't guarantee protection in every case.
+
+### Disclaimer
+
+- **I am not liable** for any damage or unintended consequences resulting from the use of this tool.
+- **No guarantees** of flawless functionality — use at your own risk!
+
