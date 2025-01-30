@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int read_elf(char *filename) {
   FILE *fptr = fopen(filename, "rb");
@@ -106,10 +107,22 @@ int write_elf(char *input_file, char *output_file, uint16_t new_shnum,
   return 0;
 }
 int main(int argc, char *argv[]) {
+  char *name = argv[1];
+  if (strcmp(name, "-h") == 0) {
+    printf("----------------------------------------\n");
+    printf("Usage: gdpoise <name or path for binary>\n");
+    printf("----------------------------------------\n");
+
+    return 0;
+  }
+  if (argc > 2) {
+    printf("Error, too many arguments provided\n");
+  }
+
   read_elf(argv[1]);
 
   char output_file[256];
-  snprintf(output_file, sizeof(output_file), "%s_modified", argv[2]);
+  snprintf(output_file, sizeof(output_file), "%s_modified", argv[1]);
 
   uint16_t shnum = 0xffff;
 
