@@ -24,5 +24,5 @@ While this tool is effective against GDB, it's worth noting that other debuggers
 
 ### Inspiration and Ressources
 
-I first read about this technique in a Paper by Brian Roden from the University of Arkansas, called "Linux Malware Obfuscation". Apparently,
+I first read about this technique in a Paper by Brian Roden from the University of Arkansas, called ["Linux Malware Obfuscation"](https://scholarworks.uark.edu/csceuht/112/). Apparently,
 this technique was also used by the Mirai botnet malware to prohibit ressearchers from analyzing binaries. Also thanks to my friend [PlexSheep](https://github.com/PlexSheep), who is working on a debugger, motivating me to try this out as I rarely do coding projects.
